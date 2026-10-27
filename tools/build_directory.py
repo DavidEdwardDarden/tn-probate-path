@@ -143,7 +143,7 @@ COUNTIES = {
  "Jefferson": (CC, "Frank Herndon, County Clerk", "865-397-2935",
    "The County Clerk runs the probate section here, with its own intake form and fee schedule. Small estate $354.50, opening an estate $523.50, or $354.50 with no creditor notice. Open Saturday 8 to 11. Do not call 865-397-2404, which is the Clerk and Master.", None),
  "Lauderdale": (ASK, "Minnie Stowe", "731-635-1941",
-   "A 2025 act dissolves the Probate and Juvenile Court only when the sitting judge's term ends, but lets the county move the clerking any time. Nothing published says whether it has. Call the Clerk and Master first; if the answer is no, the County Clerk is 731-635-2561. Ask which building, because three addresses are in play.", None),
+   "This county is mid-transition. Private Acts of 2025 ch. 16 dissolves the Probate and Juvenile Court, but only when the sitting judge's full term expires, and separately permits the county commission to move the probate clerking at any time before that. No published record says whether it has. The 1982 act naming the County Clerk as probate clerk was left unamended and still stands on its face. Call the Clerk and Master at 731-635-1941 and ask whether estate petitions are being received there; if not, the County Clerk is 731-635-2561. Ask which building too, because the 2025 act ordered the court moved to the Justice Complex and three addresses are in circulation.", None),
  "Loudon": (PROB, "Steve Harrelson", "865-986-3505",
    "One officeholder is the Circuit, Criminal, Sessions, Juvenile and Probate Court Clerk. Probate is heard in General Sessions at the Justice Center in Lenoir City, 12680 Highway 11 West, Suite 3. Not the County Clerk and not the Clerk and Master.", None),
  "Madison": (CM, "Sharon Perry-Brown", "731-988-3025",
@@ -151,7 +151,7 @@ COUNTIES = {
  "Rhea": (CC, "Linda Shaver, County Clerk", "423-775-7808",
    "A 1982 act vests probate in General Sessions with the County Clerk as its clerk, and expressly divested the Clerk and Master. The county website is offline and two addresses circulate, so confirm the street address when you call.", None),
  "Scott": (ASK, "Michael Potter", "423-663-2627",
-   "Probate jurisdiction sits in General Sessions and the acts do not settle which office clerks it. The Circuit Court Clerk, 423-663-2440, is the other candidate. Call both before you file.", None),
+   "Private Acts of 1982 ch. 383 vests all probate jurisdiction in General Sessions and names no clerk for it. Private Acts of 1951 ch. 657 makes the Circuit Court Clerk the clerk of General Sessions, which points one way. T.C.A. 18-6-106 points instead at the Clerk and Master. The county publishes nothing either way and the state's own compilation declines to name a current probate clerk, so both offices are legally defensible. Call the Clerk and Master at 423-663-2627 and the Circuit Court Clerk at 423-663-2440 and ask which one takes estate filings.", None),
  "Unicoi": (CM, "Teresa Simerly", "423-743-9541",
    "An Attorney General opinion issued about this county moved probate clerking off the County Clerk, and the Clerk and Master is where it lands. The County Clerk lists no probate function. Mail goes to PO Box 46, not the general county box. Confirm before filing.", None),
  "Van Buren": (CM, "Tina Shockley", "931-946-7175",
@@ -184,7 +184,7 @@ BADGE = {
     CC:   ("County Clerk", "alt"),
     CIRC: ("Circuit Court Clerk", "alt"),
     PROB: ("Probate Court Clerk", "alt"),
-    ASK:  ("Call to confirm", "warn"),
+    ASK:  ("Unsettled in state law", "warn"),
 }
 
 
@@ -193,8 +193,8 @@ def build():
     out += '    <div class="crumb"><a href="/">Tennessee probate</a> &#183; All 95 counties</div>\n'
     out += '    <h1>Where Tennessee probate is actually filed</h1>\n'
     out += ('    <p class="standfirst lede">Every county, the office that takes the filing, and the number '
-            'that reaches it. Most counties use the Clerk and Master. Six do not, and walking into the wrong '
-            'office costs you a morning.</p>\n')
+            'that reaches it. Eighty-four counties use the Clerk and Master. Eleven do not, and walking into '
+            'the wrong office costs you a morning.</p>\n')
     out += '  </header>\n\n'
 
     out += '''  <div class="notice">
@@ -203,24 +203,28 @@ def build():
   </div>
 
   <div class="card">
-    <h2 class="sec">The six exceptions</h2>
+    <h2 class="sec">The nine exceptions</h2>
     <p>If the estate is in one of these counties, the Clerk and Master is the wrong office.</p>
     <div class="block">
       <ul>
-        <li><b>Davidson.</b> Seventh Circuit Court, Probate Division. File with the Circuit Court Clerk.</li>
-        <li><b>Shelby.</b> A standing Probate Court with its own separately elected clerk.</li>
-        <li><b>Rutherford.</b> General Sessions judges sit as Probate Judge. File with the County Clerk.</li>
-        <li><b>Sevier.</b> General Sessions Court, with the County Clerk's probate clerks.</li>
+        <li><b>Davidson.</b> Seventh Circuit Court, Probate Division. File with the Circuit Court Clerk. The Clerk and Master here does not take probate.</li>
+        <li><b>Shelby.</b> A standing Probate Court with its own separately elected clerk, in Room 124.</li>
         <li><b>Putnam.</b> Probate Court under a General Sessions judge, clerked by the Circuit Court Clerk.</li>
-        <li><b>Cannon.</b> County Clerk.</li>
+        <li><b>Loudon.</b> One officeholder is the Circuit, Criminal, Sessions, Juvenile and Probate Court Clerk. File there, at the Justice Center in Lenoir City.</li>
+        <li><b>Rutherford.</b> General Sessions judges sit as Probate Judge. File with the County Clerk, and use 615-898-7798 rather than the published main line.</li>
+        <li><b>Jefferson.</b> County Clerk, which runs its own probate section with its own intake form and fee schedule.</li>
+        <li><b>Rhea.</b> County Clerk. A 1982 act vested probate exclusively in General Sessions and expressly divested the Clerk and Master.</li>
+        <li><b>Sevier.</b> County Clerk's probate clerks. Ask for option 5.</li>
+        <li><b>Cannon.</b> County Clerk, under a population exemption at T.C.A. 18-6-106.</li>
       </ul>
     </div>
-    <p>Nine more counties have a probate court outside chancery where the Clerk and Master still takes the filing: Wilson, Cumberland, Dyer, Monroe, Roane, White, Henry, Hamilton, and Knox. Right office, unusual court.</p>
+    <p>Two more, <b>Scott</b> and <b>Lauderdale</b>, are unsettled in state law. The reasons are under their entries below.</p>
+    <p>Nine further counties have a probate court sitting outside chancery while the Clerk and Master still takes the filing: Wilson, Cumberland, Dyer, Monroe, Roane, White, Henry, Hamilton, and Knox. Right office, unusual court.</p>
   </div>
 
   <div class="card">
     <h2 class="sec">Every county</h2>
-    <p>Type to filter. Counties marked <b>Call to confirm</b> have a documented conflict between a county act and the statute that public records do not resolve; the number listed will tell you where to go.</p>
+    <p>Type to filter. Two counties are marked <b>Unsettled in state law</b>. In those, a county private act and the general statute point at different offices and no public record resolves it, or a court is mid-transition under an act that has not finished taking effect. The reason is stated under each one, and the number listed reaches someone who can answer it today.</p>
     <input type="search" id="filter" placeholder="Start typing a county name" autocomplete="off">
     <div class="feewrap">
       <table class="fees" id="counties">
