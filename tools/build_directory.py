@@ -224,6 +224,11 @@ def build():
   </div>
 
   <div class="card">
+    <h2 class="sec">Take this as a file</h2>
+    <p>The whole table is published as <a href="/data/">open data</a>, CSV and JSON, licensed CC BY 4.0. If you maintain a national probate resource and Tennessee is the state you cannot keep current, it is yours.</p>
+  </div>
+
+  <div class="card">
     <h2 class="sec">Every county</h2>
     <p>Type to filter. Two counties are marked <b>Unsettled in state law</b>. In those, a county private act and the general statute point at different offices and no public record resolves it, or a court is mid-transition under an act that has not finished taking effect. The reason is stated under each one, and the number listed reaches someone who can answer it today.</p>
     <input type="search" id="filter" placeholder="Start typing a county name" autocomplete="off">

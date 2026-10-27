@@ -272,3 +272,4 @@ table.fees td{vertical-align:top}
 }
 .verified .vwhat a{color:var(--seal);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .verified .vwhat a:hover{text-decoration-thickness:2px}
+.offer-scope{font:400 .88rem/1.55 var(--body);color:var(--muted);margin:.6rem 0 0;padding-top:.7rem;border-top:1px solid var(--rule)}

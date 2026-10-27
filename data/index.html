@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open data: where Tennessee probate is filed</title>
+<meta name="description" content="A free, openly licensed dataset of the office that receives probate filings in each of Tennessee's 95 counties, with officeholders, phone numbers, the counties where state law is unsettled, and the method used to compile it. CSV and JSON.">
+<link rel="canonical" href="https://estate.handofdavid.com/data/">
+<style>
+  :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  *{box-sizing:border-box}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,600;1,6..72,400&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="crumb"><a href="/">Tennessee probate</a> &#183; Open data</div>
+    <h1>Where Tennessee probate is filed, as open data</h1>
+    <p class="standfirst lede">All 95 counties, the office that takes the filing, who runs it, and the number that reaches them. Free, openly licensed, and documented. Take it and use it.</p>
+  </header>
+
+  <!--VERIFIED:START-->
+  <div class="verified">
+    <span class="vlabel">Last verified</span>
+    <span class="vdate">October 27, 2026</span>
+    <span class="vwhat">Third independent audit of county facts, checked only against each county's own published pages. Robertson's address, Maury's fee schedule, and the exceptions panel corrected. <a href="/how-this-is-checked/">How this is checked</a></span>
+  </div>
+  <!--VERIFIED:END-->
+
+  <div class="card">
+    <h2 class="sec">The files</h2>
+    <div class="block">
+      <ul>
+        <li><a href="/data/tn-probate-filing-offices.csv"><b>tn-probate-filing-offices.csv</b></a> &#183; 95 rows, one per county</li>
+        <li><a href="/data/tn-probate-filing-offices.json"><b>tn-probate-filing-offices.json</b></a> &#183; the same data with the caveats and methodology attached</li>
+      </ul>
+    </div>
+    <p><b>Licence: CC BY 4.0.</b> Use it commercially, build on it, redistribute it. The only condition is attribution to estate.handofdavid.com. If you are maintaining a national probate resource and Tennessee is the state you cannot keep current, this is yours.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="sec">Why this exists as a file and not just a web page</h2>
+    <p>Tennessee has no single authoritative list of which office takes a probate filing. Chancery court holds the jurisdiction generally under <code>T.C.A. &#167; 16-16-201</code>, but only &#8220;where not otherwise specifically provided by public, private, special or local acts.&#8221; Counties have their own private acts, some written in the 1940s and never amended when the general law moved, and a separate statute exempts a handful of counties by population bracket.</p>
+    <p>The result is that eleven of the ninety-five counties depart from the default, several of them in ways that state directories get wrong. Anyone trying to cover Tennessee from the statute alone will be wrong about those eleven, and will not know which eleven.</p>
+    <p>So the data is published rather than hoarded. It is more useful in other people's hands than sitting in a table on a page, and the counties it describes do not become less true for being copied.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="sec">What is in it</h2>
+    <div class="feewrap">
+      <table class="fees">
+        <thead><tr><th>Field</th><th>What it holds</th></tr></thead>
+        <tbody>
+          <tr><td><code>county</code></td><td>County name</td></tr>
+          <tr><td><code>office</code></td><td>The office that receives probate filings</td></tr>
+          <tr><td><code>office_code</code></td><td>Machine-readable form of the same</td></tr>
+          <tr><td><code>officeholder</code></td><td>Who currently holds it</td></tr>
+          <tr><td><code>phone</code></td><td>The number that reaches that office for estates</td></tr>
+          <tr><td><code>notes</code></td><td>Local rules, payment restrictions, published fees, conflicts</td></tr>
+          <tr><td><code>settled</code></td><td><code>false</code> where state law does not resolve the question</td></tr>
+          <tr><td><code>last_verified</code></td><td>Date of the most recent check</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fee-note">The current split: 83 counties file with the Clerk and Master, 5 with the County Clerk, 2 with a Circuit Court Clerk, 2 with a dedicated Probate Court Clerk, and 3 are marked unsettled.</p>
+  </div>
+
+  <div class="notice">
+    <h2>The honest parts</h2>
+    <p><b>Three counties are marked <code>settled=false</code>, and that is the most useful thing in the file.</b> In Scott County a 1982 private act vests probate in General Sessions and names no clerk, a 1951 act makes the Circuit Court Clerk the clerk of General Sessions, and the general statute points instead at the Clerk and Master. The county publishes nothing either way. In Lauderdale County a 2025 act dissolves the probate court when the sitting judge's term expires while separately allowing the clerking to move sooner, and no record says whether it has. Madison County's sources contradict each other and nothing the county publishes resolves it.</p>
+    <p>A dataset that gave those three a confident answer would be more complete and less true.</p>
+    <p><b>Addresses are mostly absent on purpose.</b> They were the least reliable field in every official source checked. Three separate official sources gave three different addresses for one office. Phone numbers held up. Where an address appears in the notes, a county's own site published it.</p>
+    <p><b>Where a county's private act and its own current website disagree, this follows the website</b>, because the website describes what happens at the counter. The act is noted where it matters.</p>
+  </div>
+
+  <div class="card">
+    <h2 class="sec">How it was built, and how it stays current</h2>
+    <p>Every entry traces to the county's own published pages, or to the private acts and general statutes that assign the duty. State clerk directories were used last and checked against the counties, which turned up errors in them: one lists a court that was repealed in 2022, another gives the wrong General Sessions judge, another the wrong first name for a clerk.</p>
+    <p>A scheduled check runs weekly against the statutes and a rotating slice of counties, and corrections are recorded with the reason. The full method, the sources that proved unreliable, and the list of what has been found wrong and fixed are on the <a href="/how-this-is-checked/">how this is checked</a> page.</p>
+    <p>The generator and the data are in the open: <a href="https://github.com/DavidEdwardDarden/tn-probate-path">github.com/DavidEdwardDarden/tn-probate-path</a>.</p>
+  </div>
+
+  <div class="offer">
+    <h3>Corrections wanted</h3>
+    <p>If a clerk's office told you something different from what is in this file, the office is right and I want to know. That is the most useful message this project can receive, and it gets fixed the same day with the change recorded.</p>
+    <p>If you are using the data and want the three unsettled counties resolved, say so. They need phone calls, and knowing somebody is waiting on them moves them up the list.</p>
+    <div class="contact">
+      <span class="addr">david@handofdavid.com</span>
+    </div>
+  </div>
+
+  <footer>
+    <p><b>This is organization and routing, not legal advice.</b> Which office takes a filing is a fact about an office. What any particular estate should file is a question for a probate attorney.</p>
+    <p>Compiled and maintained by David Darden, Murfreesboro, Tennessee. Offices move, clerks retire, and private acts get amended. Check the date on the file, and call before you drive.</p>
+  </footer>
+</div>
+
+</body>
+</html>
