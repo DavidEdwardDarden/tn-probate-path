@@ -270,3 +270,5 @@ table.fees td{vertical-align:top}
   .verified{flex-direction:column; align-items:flex-start; gap:.3rem}
   .verified .vwhat{flex:none}
 }
+.verified .vwhat a{color:var(--seal);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.verified .vwhat a:hover{text-decoration-thickness:2px}

@@ -16,4 +16,10 @@
 <url><loc>https://estate.handofdavid.com/maury-county/</loc><lastmod>2026-10-27</lastmod></url>
 <url><loc>https://estate.handofdavid.com/bedford-county/</loc><lastmod>2026-10-27</lastmod></url>
 <url><loc>https://estate.handofdavid.com/robertson-county/</loc><lastmod>2026-10-27</lastmod></url>
+  <url>
+    <loc>https://estate.handofdavid.com/how-this-is-checked/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

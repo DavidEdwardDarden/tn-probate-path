@@ -31,7 +31,8 @@ def banner(state):
         f'  <div class="verified">\n'
         f'    <span class="vlabel">Last verified</span>\n'
         f'    <span class="vdate">{d}</span>\n'
-        f'    <span class="vwhat">{what}</span>\n'
+        f'    <span class="vwhat">{what} '
+        f'<a href="/how-this-is-checked/">How this is checked</a></span>\n'
         f'  </div>\n'
         f'  {END}'
     )
