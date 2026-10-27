@@ -1,7 +1,21 @@
 {
   "verified_on": "2026-10-27",
-  "scope": "Statutory core re-checked against the Tennessee Code: the $50,000 personal-property ceiling, the mandatory corporate surety bond and its three exceptions, the bar on creditor notice and claims, and the 45-day waiver. Eighteen counties re-checked against their own published pages. Carter's phone corrected and one sentence that described the bond as discretionary rewritten.",
+  "scope": "Third independent audit of county facts, checked only against each county's own published pages. Robertson's address, Maury's fee schedule, and the exceptions panel corrected.",
   "history": [
+    {
+      "date": "2026-10-27",
+      "checked": "County-facts audit, 140+ facts verified against county sources only. CORRECTED: Robertson was published at 501 S. Main Street Room 103, with a warning about Room 109; the county publishes 422 West Court Square, Room 102. Maury carried five wrong fee figures from a superseded schedule, both small estate lines understated by about $234, and its own stale-schedule warning was itself stale since the county publishes a January 1 2026 schedule; its hours field stated staff hours as office hours and it claimed the clerk prepares orders when the county says it provides no forms. The exceptions panel listed Knox and Hamilton as hearing probate outside Chancery when both keep it inside as a named division, and omitted Blount and Madison. Madison downgraded to call-to-confirm after nothing in its entry could be sourced to the county. Rutherford gains a warning that the county's own filing-fees page is the 2016 Chancery schedule and does not govern probate there. CONFIRMED by county sources: Sumner's no-bags rule, Sevier's attorney requirement, Rutherford's creditor-notice prices, and the exact scope of Davidson's no-personal-checks footnote.",
+      "unresolved": [
+        "Scott",
+        "Lauderdale",
+        "Madison",
+        "Shelby fees and local rules",
+        "Hamilton local rules and fees",
+        "Williamson fee table",
+        "Overton officeholder",
+        "Rhea officeholder and phone"
+      ]
+    },
     {
       "date": "2026-10-27",
       "checked": "First weekly verification run. STATUTORY CORE: 30-4-102, 30-4-103 (bond and its three exceptions, subsection (6) barring creditor notice and claims, subsection (8) waiving the 45-day wait), 30-4-104(e), 32-2-111, 30-1-117, 16-16-201 and 18-6-106 all confirmed against two independent renderings of the code (Justia 2025 edition and FindLaw), latest amendment still Acts 2023 ch. 297; no 2025 or 2026 act touches chapter 30-4. THREE CORRECTIONS: Carter County's phone was 423-542-1812, which appears nowhere on cartercountytn.gov; the county publishes 423-542-1801 three times on its own Clerk and Master page. Bledsoe's officeholder respelled Tyler DeBord per bledsoetn.com. On the small-estate page, one sentence read that the court 'can require a bond', which describes the bond as discretionary; the statute makes it mandatory subject to three exceptions, and the same page said so correctly two sections later. Rewritten. COUNTIES CHECKED (18): Rutherford, Davidson, Shelby, Knox, Hamilton, Williamson, Anderson, Bedford, Benton, Bledsoe, Blount, Bradley, Campbell, Cannon, Carroll, Carter, Cheatham, Chester. Hamilton's appointment-only probate note now has a current source in the local rules effective September 1, 2026. Knox confirms Havasy serving since August 2026. Site itself: twenty URLs return 200, the stylesheet served matches the repo byte for byte, HTTPS carries HSTS, and the contact address reads david@handofdavid.com on every page.",

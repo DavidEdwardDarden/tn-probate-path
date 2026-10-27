@@ -30,7 +30,7 @@ COUNTIES = {
  "Shelby": (PROB, "Eddie S. Jones, Jr.", "901-222-3750",
    "A standing Probate Court with its own elected clerk. Room 124, not the Clerk and Master in Room 308.", "shelby-county"),
  "Rutherford": (CC, "Lisa Duke Crowell", "615-898-7800",
-   "General Sessions judges sit as Probate Judge, so filings go to the County Clerk rather than the Clerk and Master. This office runs four locations; probate is a Murfreesboro matter, at 319 N Maple Street. 615-898-7800 is the number the county publishes. A direct probate line may exist but the county does not publish one, so ask for estates when you call.", "rutherford-county"),
+   "General Sessions judges sit as Probate Judge, so filings go to the County Clerk rather than the Clerk and Master. This office runs four locations; probate is a Murfreesboro matter, at 319 N Maple Street. Careful with the county's own filing-fees page: that is the 2016 Chancery schedule and it does not govern probate here, which uses the County Clerk's schedule revised July 1 2018. 615-898-7800 is the number the county publishes. A direct probate line may exist but the county does not publish one, so ask for estates when you call.", "rutherford-county"),
  "Sevier": (CC, "Adra Rowland, County Clerk", "865-453-5502 opt. 5",
    "Probate is handled in-house by the County Clerk; ask for option 5. IMPORTANT: this county's published probate instructions state that filings must be prepared by a Tennessee-licensed attorney. No Tennessee statute requires counsel, so whether that is a local rule or a strong preference is the first thing to ask on the phone. Fees from 01/01/2026: $433.50 for a small estate, muniment, or probate without publication; $503.50 with publication.", None),
  "Putnam": (CIRC, "Jennifer Wilkerson", "931-528-1508",
@@ -111,7 +111,7 @@ COUNTIES = {
  "Lincoln": (CM, "Rebecca Bartlett Carpenter", "931-433-1482", None, None),
  "Marion": (CM, "Paige Mashburn", "423-942-2601", None, None),
  "Maury": (CM, "Larry Roe Sr.", "931-375-1307",
-   "The 2022 fee schedule contradicts the county's own 2026 claim form. Confirm the figure.", "maury-county"),
+   "Probate sits in Chancery. Fees from the schedule effective January 1, 2026: $456.50 to open with publication, $379.50 without, and $379.50 or $384.50 for a small estate. Go between 8:00 and 4:00; the 7:30 to 4:30 figure the county also publishes is staff hours. No e-filing, and a new estate cannot be opened by email or fax.", "maury-county"),
  "McNairy": (CM, "Kimberly Boals", "731-645-5446", None, None),
  "Meigs": (CM, "Donna Moore", "423-334-5243", None, None),
  "Morgan": (CM, "Angela Anderson", "423-346-3881", None, None),
@@ -119,7 +119,7 @@ COUNTIES = {
  "Perry": (CM, "Charlene Duplessis", "931-589-2217", None, None),
  "Polk": (CM, "Kimberly Ingram", "423-338-4522", None, None),
  "Robertson": (CM, "Jon Graves", "615-384-5650",
-   "Room 103, not Room 109 which is the Circuit Court Clerk.", "robertson-county"),
+   "Chancery Court, 422 West Court Square, Room 102, Springfield. Open 8:00 to 4:30, Monday to Friday.", "robertson-county"),
  "Sequatchie": (CM, "Sherry Brock", "423-949-3670", None, None),
  "Smith": (CM, "Jessie Goad", "615-735-2092", None, None),
  "Stewart": (CM, "April Turner", "931-232-5665", None, None),
@@ -147,8 +147,8 @@ COUNTIES = {
    "This county is mid-transition. Private Acts of 2025 ch. 16 dissolves the Probate and Juvenile Court, but only when the sitting judge's full term expires, and separately permits the county commission to move the probate clerking at any time before that. No published record says whether it has. The 1982 act naming the County Clerk as probate clerk was left unamended and still stands on its face. Call the Clerk and Master at 731-635-1941 and ask whether estate petitions are being received there; if not, the County Clerk is 731-635-2561. Ask which building too, because the 2025 act ordered the court moved to the Justice Complex and three addresses are in circulation.", None),
  "Loudon": (PROB, "Steve Harrelson", "865-986-3505",
    "One officeholder is the Circuit, Criminal, Sessions, Juvenile and Probate Court Clerk. Probate is heard in General Sessions at the Justice Center in Lenoir City, 12680 Highway 11 West, Suite 3. Not the County Clerk and not the Clerk and Master.", None),
- "Madison": (CM, "Sharon Perry-Brown", "731-988-3025",
-   "Probate is General Sessions Division II and sits at the Juvenile Court Complex, 110 Irby Street, not the Chancery building. Chancery's own FAQ says probate is not filed there. 731-988-3025 is the probate line.", None),
+ "Madison": (ASK, "Sharon Perry-Brown", "731-423-6030",
+   "Sources conflict and the county publishes nothing that settles it. One set of records puts probate in General Sessions Division II at the Juvenile Court Complex on Irby Street, with its own line at 731-988-3025. Call the Clerk and Master at 731-423-6030 and ask which office takes estate filings and in which building.", None),
  "Rhea": (CC, "Linda Shaver, County Clerk", "423-775-7808",
    "A 1982 act vests probate in General Sessions with the County Clerk as its clerk, and expressly divested the Clerk and Master. The county website is offline and two addresses circulate, so confirm the street address when you call.", None),
  "Scott": (ASK, "Michael Potter", "423-663-2627",
@@ -220,7 +220,7 @@ def build():
       </ul>
     </div>
     <p>Two more, <b>Scott</b> and <b>Lauderdale</b>, are unsettled in state law. The reasons are under their entries below.</p>
-    <p>Nine further counties have a probate court sitting outside chancery while the Clerk and Master still takes the filing: Wilson, Cumberland, Dyer, Monroe, Roane, White, Henry, Hamilton, and Knox. Right office, unusual court.</p>
+    <p>Several more counties hear probate somewhere other than Chancery while the Clerk and Master still takes the filing: Wilson, Cumberland, Dyer, Monroe, Roane, White, Henry, Blount and Madison. Right office, unusual court. <b>Knox and Hamilton are not in that group</b>; both keep probate inside Chancery as a named division, which is why their own pages say there is no separate probate court.</p>
   </div>
 
   <div class="card">
