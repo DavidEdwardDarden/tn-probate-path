@@ -246,3 +246,27 @@ table.fees td{vertical-align:top}
 .who{display:block; font-size:14px; margin-top:2px}
 .cnote{display:block; font-size:13px; color:var(--muted); margin-top:3px; max-width:46ch}
 #counties td:first-child{white-space:nowrap}
+
+/* Verified stamp. The date only moves when a check actually ran. */
+.verified{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.5rem .9rem;
+  margin:0 0 1.75rem; padding:.9rem 1.1rem;
+  border:1px solid var(--rule); border-left:3px solid var(--seal);
+  border-radius:4px; background:var(--seal-soft);
+}
+.verified .vlabel{
+  font:500 .71rem/1 var(--mono);
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+  white-space:nowrap;
+}
+.verified .vdate{
+  font:600 1.1rem/1.2 var(--body); color:var(--ink); white-space:nowrap;
+}
+.verified .vwhat{
+  font:400 .85rem/1.45 var(--body); color:var(--muted);
+  flex:1 1 17rem; min-width:0;
+}
+@media (max-width:560px){
+  .verified{flex-direction:column; align-items:flex-start; gap:.3rem}
+  .verified .vwhat{flex:none}
+}

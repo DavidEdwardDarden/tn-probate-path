@@ -1,0 +1,16 @@
+{
+  "verified_on": "2026-10-27",
+  "scope": "Every county's filing office re-checked against the county's own published pages. Statutory claims checked against the Tennessee Code.",
+  "history": [
+    {
+      "date": "2026-10-27",
+      "checked": "All 95 county routings. Corrected Jefferson (County Clerk, not Clerk and Master), Loudon (combined Probate Court Clerk, not Clerk and Master), Rhea (County Clerk, which a 1982 act gave it exclusively), Van Buren (no Law and Equity Court exists there), and the Rutherford probate line. Resolved Humphreys, Blount, Dickson, Fayette, Unicoi, Sevier and Cannon.",
+      "unresolved": ["Scott", "Lauderdale"]
+    },
+    {
+      "date": "2026-10-26",
+      "checked": "Site built. Thirteen errors found by independent audit and corrected: bond is mandatory in a small estate, no creditor claims on that track, the 45-day wait is waivable, conversion past $50,000 requires a petition, and the petition-contents citation is 30-1-117 rather than 32-2-101.",
+      "unresolved": []
+    }
+  ]
+}
