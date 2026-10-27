@@ -203,3 +203,25 @@ h2.sec{
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cta{color:#121614}}
 :root[data-theme="dark"] .cta{color:#121614}
 .bring li{margin:0}
+
+/* fee tables */
+.feewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:8px}
+table.fees{border-collapse:collapse; width:100%; min-width:320px; font-size:15px}
+table.fees th{
+  text-align:left; font-size:11.5px; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; padding:11px 14px; background:var(--paper);
+  border-bottom:1px solid var(--rule);
+}
+table.fees td{padding:10px 14px; border-bottom:1px solid var(--rule)}
+table.fees tr:last-child td{border-bottom:none}
+table.fees td:last-child,table.fees th:last-child{
+  font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap;
+}
+table.fees th:last-child{font-family:var(--body)}
+.fee-note{margin:0; font-size:13.5px; color:var(--muted)}
+.county-list{display:flex; flex-wrap:wrap; gap:10px}
+.county-list a{
+  font-size:15px; text-decoration:none; color:var(--ink);
+  border:1px solid var(--rule); border-radius:8px; padding:10px 14px;
+}
+.county-list a:hover{border-color:var(--seal); background:var(--seal-soft)}
