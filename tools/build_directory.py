@@ -53,7 +53,7 @@ COUNTIES = {
    "Chancery Probate Division, Suite 352, a different counter from Chancery in Suite 125.", "knox-county"),
 
  # --- general rule, with a county act that confirms it
- "Carter": (CM, "Andrew LaPorte", "423-542-1812", "Clerk and Master also serves as Clerk of the Probate Court.", None),
+ "Carter": (CM, "Andrew LaPorte", "423-542-1801", "Clerk and Master also serves as Clerk of the Probate Court. The county publishes 423-542-1801; an older 423-542-1812 appears nowhere on its page.", None),
  "Giles": (CM, "Crystal Gibson Greene", "931-363-2620", None, None),
  "Macon": (CM, "Kristin Reid", "615-666-2000", None, None),
  "Pickett": (CM, "Leana Neal", "931-864-3359", None, None),
@@ -75,7 +75,7 @@ COUNTIES = {
  "Bedford": (CM, "Angela Hayes", "931-684-1672",
    "The published fee schedule dates from 2017. Ask for the current cost.", "bedford-county"),
  "Benton": (CM, "Carly Bayless", "731-584-4435", None, None),
- "Bledsoe": (CM, "Tyler Debord", "423-447-2484", None, None),
+ "Bledsoe": (CM, "Tyler DeBord", "423-447-2484", None, None),
  "Bradley": (CM, "Holly Thompson", "423-728-7204", None, None),
  "Campbell": (CM, "Dennis Potter", "423-562-3496", None, None),
  "Carroll": (CM, "Kenneth Todd", "731-986-1920", None, None),

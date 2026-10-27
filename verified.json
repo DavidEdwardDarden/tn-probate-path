@@ -1,7 +1,18 @@
 {
   "verified_on": "2026-10-27",
-  "scope": "County filing offices checked against each county's own published pages. Rutherford's phone corrected back to the county's published number after an unverifiable one was found in place.",
+  "scope": "Statutory core re-checked against the Tennessee Code: the $50,000 personal-property ceiling, the mandatory corporate surety bond and its three exceptions, the bar on creditor notice and claims, and the 45-day waiver. Eighteen counties re-checked against their own published pages. Carter's phone corrected and one sentence that described the bond as discretionary rewritten.",
   "history": [
+    {
+      "date": "2026-10-27",
+      "checked": "First weekly verification run. STATUTORY CORE: 30-4-102, 30-4-103 (bond and its three exceptions, subsection (6) barring creditor notice and claims, subsection (8) waiving the 45-day wait), 30-4-104(e), 32-2-111, 30-1-117, 16-16-201 and 18-6-106 all confirmed against two independent renderings of the code (Justia 2025 edition and FindLaw), latest amendment still Acts 2023 ch. 297; no 2025 or 2026 act touches chapter 30-4. THREE CORRECTIONS: Carter County's phone was 423-542-1812, which appears nowhere on cartercountytn.gov; the county publishes 423-542-1801 three times on its own Clerk and Master page. Bledsoe's officeholder respelled Tyler DeBord per bledsoetn.com. On the small-estate page, one sentence read that the court 'can require a bond', which describes the bond as discretionary; the statute makes it mandatory subject to three exceptions, and the same page said so correctly two sections later. Rewritten. COUNTIES CHECKED (18): Rutherford, Davidson, Shelby, Knox, Hamilton, Williamson, Anderson, Bedford, Benton, Bledsoe, Blount, Bradley, Campbell, Cannon, Carroll, Carter, Cheatham, Chester. Hamilton's appointment-only probate note now has a current source in the local rules effective September 1, 2026. Knox confirms Havasy serving since August 2026. Site itself: twenty URLs return 200, the stylesheet served matches the repo byte for byte, HTTPS carries HSTS, and the contact address reads david@handofdavid.com on every page.",
+      "unresolved": [
+        "Scott",
+        "Lauderdale",
+        "Bradley: bradleychancery.org returns robots_disallowed and the county's own site names no Clerk and Master, so all three fields are carried forward unverified",
+        "Williamson officeholder: williamsonchancery.org is a JavaScript app that cannot be read, and the county directory names no officeholder. Jakob L. Schwendimann is uncontradicted but unconfirmed from a county source",
+        "Cannon, Carroll and Chester publish no probate duty description at all; officeholder and phone verified, office attribution rests on statute"
+      ]
+    },
     {
       "date": "2026-10-27",
       "checked": "Adversarial audit of the manuscript drawn from this data. REVERTED the Rutherford probate number: 615-898-7798 was added earlier today on an auditor's say-so and appears nowhere on rutherfordcountytn.gov, which publishes 615-898-7800 for the Murfreesboro office. The only places 7798 appears are two domains already blacklisted in tools/README.md. Also noted that the County Clerk runs four offices and the site had not said probate is a Murfreesboro matter.",
