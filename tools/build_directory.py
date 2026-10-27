@@ -29,8 +29,8 @@ COUNTIES = {
    "Seventh Circuit Court, Probate Division. The Clerk and Master here does not take probate.", "davidson-county"),
  "Shelby": (PROB, "Eddie S. Jones, Jr.", "901-222-3750",
    "A standing Probate Court with its own elected clerk. Room 124, not the Clerk and Master in Room 308.", "shelby-county"),
- "Rutherford": (CC, "Lisa Duke Crowell", "615-898-7798",
-   "General Sessions judges sit as Probate Judge. Filings go to the County Clerk.", "rutherford-county"),
+ "Rutherford": (CC, "Lisa Duke Crowell", "615-898-7800",
+   "General Sessions judges sit as Probate Judge, so filings go to the County Clerk rather than the Clerk and Master. This office runs four locations; probate is a Murfreesboro matter, at 319 N Maple Street. 615-898-7800 is the number the county publishes. A direct probate line may exist but the county does not publish one, so ask for estates when you call.", "rutherford-county"),
  "Sevier": (CC, "Adra Rowland, County Clerk", "865-453-5502 opt. 5",
    "Probate handled in-house by the County Clerk. Ask for option 5. Fees from 01/01/2026: $433.50 small estate, muniment, or probate without publication; $503.50 with publication.", None),
  "Putnam": (CIRC, "Jennifer Wilkerson", "931-528-1508",
@@ -211,7 +211,7 @@ def build():
         <li><b>Shelby.</b> A standing Probate Court with its own separately elected clerk, in Room 124.</li>
         <li><b>Putnam.</b> Probate Court under a General Sessions judge, clerked by the Circuit Court Clerk.</li>
         <li><b>Loudon.</b> One officeholder is the Circuit, Criminal, Sessions, Juvenile and Probate Court Clerk. File there, at the Justice Center in Lenoir City.</li>
-        <li><b>Rutherford.</b> General Sessions judges sit as Probate Judge. File with the County Clerk, and use 615-898-7798 rather than the published main line.</li>
+        <li><b>Rutherford.</b> General Sessions judges sit as Probate Judge. File with the County Clerk, in Murfreesboro, not at one of its other three offices.</li>
         <li><b>Jefferson.</b> County Clerk, which runs its own probate section with its own intake form and fee schedule.</li>
         <li><b>Rhea.</b> County Clerk. A 1982 act vested probate exclusively in General Sessions and expressly divested the Clerk and Master.</li>
         <li><b>Sevier.</b> County Clerk's probate clerks. Ask for option 5.</li>
