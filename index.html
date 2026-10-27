@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Six questions that route a Tennessee estate to the right probate filing. Current with the 2023 Small Estate Probate Act rewrite that replaced the small estate affidavit with a petition for Limited Letters.">
+<link rel="canonical" href="https://estate.handofdavid.com/">
+<style>
+  :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  *{box-sizing:border-box}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Tennessee Probate Path</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,600;1,6..72,400&family=Public+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one narrow column, one question at a time, result unfolds as a filing sheet */
+  :root{
+    --paper:#F7F8F6;
+    --card:#FFFFFF;
+    --ink:#16201C;
+    --muted:#5A6862;
+    --rule:#DDE3DE;
+    --seal:#1F5140;
+    --seal-soft:#E7EFEA;
+    --flag:#7A5612;
+    --flag-soft:#F6EFDE;
+    --display:"Newsreader",Georgia,"Times New Roman",serif;
+    --body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121614; --card:#1A201C; --ink:#E8EDE8; --muted:#9AA79F;
+      --rule:#2B332D; --seal:#6FBF9A; --seal-soft:#1C2B24;
+      --flag:#D8AC55; --flag-soft:#2A2416; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121614; --card:#1A201C; --ink:#E8EDE8; --muted:#9AA79F;
+    --rule:#2B332D; --seal:#6FBF9A; --seal-soft:#1C2B24;
+    --flag:#D8AC55; --flag-soft:#2A2416; color-scheme:dark;
+  }
+
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--body); font-size:16px; line-height:1.6;
+    padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px));
+    padding-block:0 56px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:660px; margin:0 auto; display:flex; flex-direction:column; gap:28px}
+
+  header{padding-block:40px 0; display:flex; flex-direction:column; gap:10px}
+  .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--seal);
+  }
+  h1{
+    font-family:var(--display); font-weight:600; font-size:clamp(30px,6vw,42px);
+    line-height:1.12; margin:0; text-wrap:balance; letter-spacing:-.01em;
+  }
+  .standfirst{color:var(--muted); margin:0; max-width:52ch}
+
+  .notice{
+    border-left:3px solid var(--flag); background:var(--flag-soft);
+    padding:14px 16px; border-radius:0 6px 6px 0;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .notice h2{
+    font-family:var(--body); font-size:12px; font-weight:700; margin:0;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--flag);
+  }
+  .notice p{margin:0; font-size:15px}
+
+  .card{
+    background:var(--card); border:1px solid var(--rule); border-radius:10px;
+    padding:24px 22px; display:flex; flex-direction:column; gap:18px;
+  }
+
+  .progress{display:flex; align-items:center; gap:8px; min-width:0}
+  .pip{height:4px; flex:1 1 0; min-width:0; border-radius:2px; background:var(--rule)}
+  .pip.done{background:var(--seal)}
+  .pip.now{background:var(--seal); opacity:.5}
+  .step-no{
+    font-family:var(--mono); font-size:11px; color:var(--muted);
+    letter-spacing:.08em; white-space:nowrap;
+  }
+
+  .q{font-family:var(--display); font-size:23px; line-height:1.3; margin:0; text-wrap:balance}
+  .q-help{margin:-8px 0 0; color:var(--muted); font-size:14.5px}
+
+  .opts{display:flex; flex-direction:column; gap:10px}
+  .opt{
+    font:inherit; text-align:left; cursor:pointer; color:var(--ink);
+    background:transparent; border:1px solid var(--rule); border-radius:8px;
+    padding:13px 15px; display:flex; flex-direction:column; gap:3px;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .opt:hover{border-color:var(--seal); background:var(--seal-soft)}
+  .opt:focus-visible{outline:2px solid var(--seal); outline-offset:2px}
+  .opt b{font-weight:500}
+  .opt span{font-size:13.5px; color:var(--muted)}
+
+  .back{
+    align-self:flex-start; font:inherit; font-size:13.5px; color:var(--muted);
+    background:none; border:none; padding:4px 0; cursor:pointer; text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .back:focus-visible{outline:2px solid var(--seal); outline-offset:2px}
+
+  /* result */
+  .verdict{display:flex; flex-direction:column; gap:7px; padding-bottom:4px; border-bottom:1px solid var(--rule)}
+  .verdict .label{
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .verdict h2{
+    font-family:var(--display); font-weight:600; font-size:clamp(24px,5vw,31px);
+    margin:0; line-height:1.2; color:var(--seal); text-wrap:balance;
+  }
+  .verdict .cite{font-family:var(--mono); font-size:12.5px; color:var(--muted)}
+
+  .block{display:flex; flex-direction:column; gap:8px}
+  .block h3{
+    font-size:12px; font-weight:700; margin:0; letter-spacing:.09em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .block p{margin:0}
+  .block ol,.block ul{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px}
+  .block li::marker{color:var(--seal)}
+
+  .facts{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px;
+    background:var(--rule); border:1px solid var(--rule); border-radius:8px; overflow:hidden;
+  }
+  .fact{background:var(--card); padding:12px 14px; min-width:0; display:flex; flex-direction:column; gap:2px}
+  .fact dt{font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+  .fact dd{margin:0; font-family:var(--mono); font-size:15px; font-variant-numeric:tabular-nums}
+
+  .answers{display:flex; flex-wrap:wrap; gap:7px}
+  .chip{
+    font-size:12.5px; border:1px solid var(--rule); border-radius:99px;
+    padding:4px 11px; color:var(--muted); background:var(--paper);
+  }
+
+  .restart{
+    font:inherit; font-size:14px; font-weight:500; cursor:pointer;
+    background:var(--seal); color:var(--card); border:none; border-radius:8px;
+    padding:11px 18px; align-self:flex-start;
+  }
+  :root[data-theme="dark"] .restart,
+  .restart{color:#F7F8F6}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .restart{color:#121614}}
+  :root[data-theme="dark"] .restart{color:#121614}
+  .restart:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+
+  .offer{
+    border:1px solid var(--seal); background:var(--seal-soft); border-radius:10px;
+    padding:20px 18px; display:flex; flex-direction:column; gap:12px;
+  }
+  .offer h3{
+    font-family:var(--display); font-weight:600; font-size:20px; margin:0;
+    color:var(--ink); letter-spacing:0; text-transform:none;
+  }
+  .offer p{margin:0; font-size:15px}
+  .offer ul{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:5px; font-size:15px}
+  .price{font-family:var(--mono); font-size:15px; color:var(--seal); font-variant-numeric:tabular-nums}
+  .contact{display:flex; flex-wrap:wrap; align-items:center; gap:10px}
+  .addr{
+    font-family:var(--mono); font-size:14px; background:var(--card);
+    border:1px solid var(--rule); border-radius:6px; padding:8px 11px;
+    user-select:all; min-width:0; overflow-wrap:anywhere;
+  }
+  .copy{
+    font:inherit; font-size:13.5px; font-weight:500; cursor:pointer;
+    background:transparent; color:var(--seal); border:1px solid var(--seal);
+    border-radius:6px; padding:8px 13px;
+  }
+  .copy:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+
+  footer{
+    border-top:1px solid var(--rule); padding-top:20px;
+    display:flex; flex-direction:column; gap:10px; color:var(--muted); font-size:13.5px;
+  }
+  footer p{margin:0; max-width:60ch}
+  footer code{font-family:var(--mono); font-size:12.5px; color:var(--ink)}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important; animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Rutherford County and all 95 Tennessee counties</div>
+    <h1>Which probate path does this estate take?</h1>
+    <p class="standfirst">Six questions about what the person owned and left behind. The answer names the filing, the court, and the clock you are on.</p>
+  </header>
+
+  <div class="notice">
+    <h2>The rule changed in 2023</h2>
+    <p>Tennessee no longer has a small estate affidavit you hand to a bank. A 2023 rewrite of the Small Estate Probate Act replaced it with a sworn petition to the court clerk, who issues Limited Letters. Guides still describing the old affidavit are out of date.</p>
+  </div>
+
+  <div class="card" id="panel"></div>
+
+  <footer>
+    <p><b>This is organization, not legal advice.</b> It points you at the right filing so you are not reading the wrong form at the clerk's window. Tennessee probate is handled by the Clerk and Master of the Chancery Court in most counties, and a few counties have their own probate court with local rules.</p>
+    <p>Statutes referenced: <code>T.C.A. § 30-4-101 et seq.</code> (Small Estate Probate Act, rewritten effective April 28, 2023), <code>§ 30-4-102</code> (the $50,000 test, personal property only), <code>§ 30-4-103</code> (petition and Limited Letters), <code>§ 32-2-111</code> (muniment of title), <code>§ 32-2-101</code> (probate in common form), <code>§ 30-2-306</code> (notice to creditors). TennCare estate recovery applies to long-term care received at age 55 or older; the estate representative files a Request for Release with TennCare.</p>
+    <p>Court costs, local forms, and whether a county entertains a muniment of title all vary. The Clerk and Master in the county where the person lived is the authority on all three, and the statute directs that office to help you with the small estate petition.</p>
+    <p>Written and checked against the Tennessee Code and county clerk forms on <b>October 26, 2026</b>, by David Darden, Murfreesboro, Tennessee. Laws change. Check the date before relying on this.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var panel = document.getElementById('panel');
+
+  var QUESTIONS = [
+    { id:'assets',
+      q:'Is there anything still in the person’s name alone?',
+      help:'A bank account, a car title, a brokerage account, land. Anything that already names a beneficiary, or is held jointly with right of survivorship, or sits in a trust, passes on its own and is not counted here.',
+      opts:[
+        {v:'yes', b:'Yes, something is in their name only'},
+        {v:'unsure', b:'Not sure', s:'Answer as if yes. You will see what to check.'},
+        {v:'no', b:'No, everything had a beneficiary, a joint owner, or a trust'}
+      ]},
+    { id:'will',
+      q:'Did they leave a signed will?',
+      help:'The original document, not a copy. Tennessee wants the original filed with the clerk.',
+      opts:[
+        {v:'yes', b:'Yes, and we have the original'},
+        {v:'copy', b:'There is a will but only a copy', s:'This needs a lawyer. A lost original is presumed revoked.'},
+        {v:'no', b:'No will'}
+      ]},
+    { id:'realty',
+      q:'Is there real estate titled in their name alone?',
+      help:'A house, land, a share of family property. Real estate held jointly with survivorship, or by a transfer-on-death deed recorded before death, passes outside of this.',
+      opts:[
+        {v:'yes', b:'Yes, real estate in their name only'},
+        {v:'no', b:'No real estate to transfer'}
+      ]},
+    { id:'value',
+      q:'Adding up only the personal property in their name alone, is it over $50,000?',
+      help:'Bank accounts, vehicles, furniture, tools, investments held individually. Leave real estate out of this number entirely. Leave out anything with a named beneficiary.',
+      opts:[
+        {v:'under', b:'$50,000 or less'},
+        {v:'over', b:'More than $50,000'},
+        {v:'unsure', b:'Not sure yet', s:'You will get the $50,000 test and what counts toward it.'}
+      ]},
+    { id:'days',
+      q:'Has it been 45 days since the date of death?',
+      help:'The small estate route has a 45 day waiting period built into the statute.',
+      opts:[
+        {v:'yes', b:'Yes, 45 days or more'},
+        {v:'no', b:'Not yet'}
+      ]},
+    { id:'dispute',
+      q:'Is anyone likely to contest the will or fight over the estate?',
+      help:'A disinherited child, a second marriage, a sibling who disagrees about the house. An expected fight changes which form of probate you open with.',
+      opts:[
+        {v:'no', b:'No, everyone is in agreement'},
+        {v:'yes', b:'Yes, or it seems likely'}
+      ]}
+  ];
+
+  var answers = {};
+  var order = [];
+
+  function next(){
+    if(answers.assets === undefined) return 'assets';
+    if(answers.assets === 'no') return null;
+    if(answers.will === undefined) return 'will';
+    if(answers.realty === undefined) return 'realty';
+    if(answers.value === undefined) return 'value';
+    if(answers.value === 'under' && answers.days === undefined) return 'days';
+    if(answers.dispute === undefined) return 'dispute';
+    return null;
+  }
+
+  function smallEstateName(){
+    return answers.will === 'yes'
+      ? 'Limited Letters Testamentary of a Small Estate'
+      : 'Limited Letters of Administration of a Small Estate';
+  }
+
+  function verdict(){
+    var a = answers;
+
+    if(a.assets === 'no'){
+      return {
+        label:'No court filing indicated',
+        title:'Nothing here has to go through probate',
+        cite:'Non-probate transfers',
+        why:'Everything passed by beneficiary designation, survivorship, or trust. Probate exists to move property that has no other way to move.',
+        steps:[
+          'Order certified death certificates. Ten is the usual number; each institution keeps one.',
+          'Take a certified copy to each bank, insurer, and retirement plan and claim as the named beneficiary.',
+          'For a vehicle held jointly, take the title and a death certificate to the county clerk.',
+          'Watch for a forgotten account in their name alone. One old checking account is enough to put you back on the small estate path.'
+        ],
+        facts:[['Court filing','None'],['Waiting period','None'],['Typical cost','$0']],
+        caution:'If an asset turns up later in their name alone, come back and run this again.',
+        offer:false
+      };
+    }
+
+    if(a.will === 'copy'){
+      return {
+        label:'Needs an attorney first',
+        title:'A will with no original is its own proceeding',
+        cite:'Lost or destroyed will',
+        why:'Tennessee presumes a will the testator had custody of was revoked if the original cannot be found. Establishing a copy means proving that presumption wrong, with witnesses, before anything else happens.',
+        steps:[
+          'Search again. Safe deposit box, the drafting attorney’s files, the courthouse if it was filed for safekeeping.',
+          'If the original is truly gone, talk to a probate attorney before filing anything.',
+          'Do not file the copy and hope. A rejected will sends the estate to intestate succession on terms nobody chose.'
+        ],
+        facts:[['Court','Chancery or Probate'],['Attorney','Yes'],['Clock','No statutory deadline, but witnesses fade']],
+        caution:'This is the one answer on this page where the cheap path is the expensive one.',
+        offer:false
+      };
+    }
+
+    if(a.dispute === 'yes'){
+      return {
+        label:'Full administration, solemn form',
+        title:'Open it in solemn form',
+        cite:'Probate in solemn form, contrasted with § 32-2-101',
+        why:'Common form probate is quick and gives no advance notice to heirs, which leaves the door open to a challenge later. Solemn form notifies every interested party up front and is heard by the chancellor, so the order that comes out is much harder to unwind.',
+        steps:[
+          'Retain a probate attorney. A contested estate is not a self-filed matter.',
+          'Petition for probate in solemn form with notice to all interested parties.',
+          'Personal representative is appointed and Letters Testamentary or of Administration issue.',
+          'Notice to creditors is published; claims run four months from first publication.',
+          'Inventory and accounting unless the will waives them and the court allows it.'
+        ],
+        facts:[['Court','Chancery (Clerk & Master)'],['Creditor window','4 months'],['Typical span','12 to 24 months']],
+        caution:'Paying anyone out before the creditor period closes can land on the personal representative personally.'
+      };
+    }
+
+    if(a.value === 'unsure'){
+      return {
+        label:'Count before you file',
+        title:'One number decides this, and you can get it in an afternoon',
+        cite:'T.C.A. § 30-4-102, the $50,000 test',
+        why:'Everything turns on the value of the personal property in their name alone. At or under $50,000 you take the short track, a petition for Limited Letters. Over it, you open a full administration. Counting wrong in either direction costs months.',
+        steps:[
+          'Count only what was in their name alone. Individual checking and savings, a vehicle titled to them, individually held investments, furniture, tools, equipment.',
+          'Leave real estate out of the number entirely, whatever it is worth. The statute counts personal property only.',
+          'Leave out anything with a named beneficiary, anything held jointly with right of survivorship, and anything in a trust. Those pass on their own.',
+          'Use date-of-death values. Ask each bank for the balance on that date; most will give it with a death certificate.',
+          'Add it up. At or under $50,000 and 45 days past the death, you are on the small estate path. Over it, full administration.',
+          'Come back and run this again with the number in hand.'
+        ],
+        facts:[['The line','$50,000'],['Counts','Personal property only'],['Excluded','Real estate']],
+        caution:'Err toward counting. People talk themselves into the bigger case because an old account is unaccounted for, and pay for an administration they did not need.'
+      };
+    }
+
+    if(a.value === 'under' && a.days === 'no'){
+      return {
+        label:'Small estate, not yet filable',
+        title:'You qualify, the calendar does not',
+        cite:'T.C.A. § 30-4-103',
+        why:'The personal property is at or under $50,000, which puts this on the small estate track. The statute makes you wait 45 days from the date of death before the petition can go in.',
+        steps:[
+          'Mark the 45th day after the date of death on a calendar.',
+          'Use the wait to build the asset list the petition requires: every account, balance, and vehicle, with values.',
+          'Build the debt list too. The petition asks for creditors, names, addresses, and amounts.',
+          'Get the original will to the clerk if there is one. It must be filed before Limited Letters issue.',
+          a.realty === 'yes' ? 'Real estate is a separate question and cannot ride along on this petition. See the caution below.' : 'Call the holding bank and ask whether they accept Limited Letters. Most do; a few want a full administration.'
+        ],
+        facts:[['Filing','Petition for Limited Letters'],['Threshold','$50,000'],['Wait','45 days']],
+        caution: a.realty === 'yes'
+          ? 'A small estate petition cannot transfer real estate. The land needs its own route, usually muniment of title where there is a will, or an administration.'
+          : 'If more assets surface and push the total over $50,000, the matter converts to a full administration.'
+      };
+    }
+
+    if(a.value === 'under'){
+      var rl = a.realty === 'yes';
+      return {
+        label:'Small estate administration',
+        title:'Petition for ' + smallEstateName(),
+        cite:'T.C.A. § 30-4-101 et seq., § 30-4-103',
+        why:'Personal property in their name alone is at or under $50,000 and 45 days have passed. This is the short track: a sworn petition to the clerk, who issues Limited Letters you present to whoever is holding the property.',
+        steps:[
+          'Get the petition form from the Clerk and Master in the county where the person lived. The clerk is authorized by statute to help you fill it out.',
+          'List every asset with its value, and every known debt with the creditor’s name, address, and amount.',
+          a.will === 'yes' ? 'File the original will with the clerk. Limited Letters will not issue until it is in.' : 'Collect written consents from the other adult heirs if they agree you should serve.',
+          'Expect a bond requirement. The court can require it payable to the clerk regardless of what a will says about waiving bond.',
+          'Take the issued Limited Letters to each bank or institution to collect, then pay creditors before distributing anything.',
+          rl ? 'Handle the real estate separately. It cannot move on this petition.' : 'Keep receipts. You are accountable for what you collect and pay out.'
+        ],
+        facts:[['Filing','Petition for Limited Letters'],['Threshold','$50,000'],['Court cost','Set by your county']],
+        caution: rl
+          ? 'Real estate is excluded from the small estate process entirely, whatever it is worth. In Tennessee real property generally vests in the heirs or devisees at death, but clearing title usually still takes a muniment of title filing where there is a will, or a full administration. Ask the clerk, and expect to involve an attorney on the land.'
+          : 'If additional assets are found that push the estate past $50,000, you must convert to a full administration.'
+      };
+    }
+
+    if(a.realty === 'yes' && a.will === 'yes'){
+      return {
+        label:'Full administration, with a real estate question',
+        title:'Common form probate, and ask about muniment of title',
+        cite:'T.C.A. § 32-2-101, § 32-2-111',
+        why:'Personal property is over $50,000, so the small estate track is closed and a full administration opens. Separately, a muniment of title admits the will for the limited purpose of establishing title, with no personal representative appointed and no administration at all. Worth asking about before you file the larger case.',
+        steps:[
+          'Inventory everything first, sorted into their name alone versus everything else. The sort decides the case.',
+          'Ask the Clerk and Master whether the county entertains muniment of title, and whether it fits here. Practice varies by county.',
+          'Otherwise petition to probate the will in common form and for Letters Testamentary.',
+          'Publish notice to creditors. Claims run four months from first publication.',
+          'If they received TennCare long-term care at age 55 or older, send the Request for Release to TennCare early. The estate normally cannot close until that release comes back.',
+          'File the inventory and accounting, or the waivers if the will and the beneficiaries allow them.'
+        ],
+        facts:[['Court','Chancery (Clerk & Master)'],['Creditor window','4 months'],['Typical span','6 to 12 months']],
+        caution:'Muniment of title needs the original will and a search showing no later will or revocation. The statute itself does not set a debt limit, but the instrument assumes nothing needs an administrator: no claims to pay through the estate, nothing to collect. Where there are real debts, courts expect an administration instead, and county practice varies enough that the Clerk and Master is the right person to ask.'
+      };
+    }
+
+    return {
+      label:'Full administration',
+      title:'Probate in common form',
+      cite:'T.C.A. § 32-2-101',
+      why: a.value === 'over'
+        ? 'Personal property in their name alone is over the $50,000 small estate ceiling, so this is the standard track: a personal representative is appointed, creditors get notice, and the estate is settled under the court’s supervision.'
+        : 'Until the personal property is inventoried and comes in at or under $50,000, plan on the standard track. Appointment, notice to creditors, settlement under the court’s supervision.',
+      steps:[
+        'Inventory everything in their name alone, with values. This number decides whether the smaller track is still available.',
+        a.will === 'yes' ? 'File the original will and petition for probate in common form and Letters Testamentary.' : 'Petition for Letters of Administration. Tennessee’s intestate statute decides who inherits, not the family’s understanding.',
+        'Take the Letters to the bank and open an estate account. Never run estate money through a personal account.',
+        'Publish notice to creditors and mail actual notice to the ones you know of. Claims run four months from first publication.',
+        'If they received TennCare long-term care at age 55 or older, send the Request for Release to TennCare early. Waiting on that release is a common reason an estate sits open.',
+        'File the inventory and accounting, then petition to close and distribute.'
+      ],
+      facts:[['Court','Chancery (Clerk & Master)'],['Creditor window','4 months'],['Typical span','6 to 12 months']],
+      caution:'Distributing to heirs before the four month creditor period closes is the mistake that makes a personal representative personally liable.'
+    };
+  }
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderQuestion(id){
+    var q = null, idx = 0;
+    for(var i=0;i<QUESTIONS.length;i++){ if(QUESTIONS[i].id === id){ q = QUESTIONS[i]; idx = i; } }
+    panel.innerHTML = '';
+
+    var prog = el('div','progress');
+    prog.appendChild(el('span','step-no','Step ' + (order.length + 1)));
+    for(var p=0;p<6;p++){
+      var pip = el('div','pip');
+      if(p < order.length) pip.className = 'pip done';
+      else if(p === order.length) pip.className = 'pip now';
+      prog.appendChild(pip);
+    }
+    panel.appendChild(prog);
+
+    panel.appendChild(el('h2','q',q.q));
+    if(q.help) panel.appendChild(el('p','q-help',q.help));
+
+    var opts = el('div','opts');
+    q.opts.forEach(function(o){
+      var b = el('button','opt');
+      b.type = 'button';
+      b.appendChild(el('b',null,o.b));
+      if(o.s) b.appendChild(el('span',null,o.s));
+      b.addEventListener('click', function(){
+        answers[q.id] = o.v;
+        order.push(q.id);
+        render();
+      });
+      opts.appendChild(b);
+    });
+    panel.appendChild(opts);
+
+    if(order.length){
+      var back = el('button','back','Back one step');
+      back.type = 'button';
+      back.addEventListener('click', function(){
+        var last = order.pop();
+        delete answers[last];
+        render();
+      });
+      panel.appendChild(back);
+    }
+  }
+
+  var LABELS = {
+    assets:{yes:'Assets in their name alone', unsure:'Assets unclear', no:'Nothing in their name alone'},
+    will:{yes:'Will, original in hand', copy:'Will, copy only', no:'No will'},
+    realty:{yes:'Real estate to transfer', no:'No real estate'},
+    value:{under:'Personal property $50k or less', over:'Personal property over $50k', unsure:'Value not yet known'},
+    days:{yes:'45 days have passed', no:'Under 45 days'},
+    dispute:{no:'No contest expected', yes:'Contest expected'}
+  };
+
+  function renderResult(){
+    var v = verdict();
+    panel.innerHTML = '';
+
+    var head = el('div','verdict');
+    head.appendChild(el('div','label',v.label));
+    head.appendChild(el('h2',null,v.title));
+    head.appendChild(el('div','cite',v.cite));
+    panel.appendChild(head);
+
+    var why = el('div','block');
+    why.appendChild(el('h3',null,'Why this one'));
+    why.appendChild(el('p',null,v.why));
+    panel.appendChild(why);
+
+    var facts = el('dl','facts');
+    v.facts.forEach(function(f){
+      var d = el('div','fact');
+      d.appendChild(el('dt',null,f[0]));
+      d.appendChild(el('dd',null,f[1]));
+      facts.appendChild(d);
+    });
+    panel.appendChild(facts);
+
+    var steps = el('div','block');
+    steps.appendChild(el('h3',null,'What happens, in order'));
+    var ol = el('ol');
+    v.steps.forEach(function(s){ if(s) ol.appendChild(el('li',null,s)); });
+    steps.appendChild(ol);
+    panel.appendChild(steps);
+
+    var caut = el('div','notice');
+    caut.appendChild(el('h2',null,'Watch this'));
+    caut.appendChild(el('p',null,v.caution));
+    panel.appendChild(caut);
+
+    var ans = el('div','block');
+    ans.appendChild(el('h3',null,'Your answers'));
+    var chips = el('div','answers');
+    order.forEach(function(k){
+      var t = LABELS[k] && LABELS[k][answers[k]];
+      if(t) chips.appendChild(el('span','chip',t));
+    });
+    ans.appendChild(chips);
+    panel.appendChild(ans);
+
+    if(v.offer !== false){
+      var off = el('div','offer');
+      off.appendChild(el('h3',null,'Or hand the paperwork part to me'));
+      off.appendChild(el('p',null,'Every path above starts the same way: someone has to turn a pile of statements, bills, and titles into one list the court and the family can both read. That is the part I do.'));
+      var ul = el('ul');
+      ['An asset list with date-of-death values, in the order the petition asks for them',
+       'A debt and creditor list with names, addresses, and amounts',
+       'A running estate account you keep adding to as money moves',
+       'Delivered as a spreadsheet and a PDF within two business days'
+      ].forEach(function(t){ ul.appendChild(el('li',null,t)); });
+      off.appendChild(ul);
+      off.appendChild(el('p','price','$249 flat. Nothing owed until you have seen it.'));
+      off.appendChild(el('p',null,'Send me the county and roughly what the estate holds, and I will tell you exactly what to scan and what to leave alone.'));
+
+      var row = el('div','contact');
+      var addr = el('span','addr','david@handofdavid.com');
+      var copy = el('button','copy','Copy address');
+      copy.type = 'button';
+      copy.addEventListener('click', function(){
+        var done = function(){ copy.textContent = 'Copied'; setTimeout(function(){ copy.textContent = 'Copy address'; }, 1800); };
+        try{
+          navigator.clipboard.writeText('david@handofdavid.com').then(done, function(){
+            var r = document.createRange(); r.selectNodeContents(addr);
+            var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+            copy.textContent = 'Selected, press copy';
+          });
+        }catch(e){
+          var r2 = document.createRange(); r2.selectNodeContents(addr);
+          var s2 = window.getSelection(); s2.removeAllRanges(); s2.addRange(r2);
+          copy.textContent = 'Selected, press copy';
+        }
+      });
+      row.appendChild(addr); row.appendChild(copy);
+      off.appendChild(row);
+      panel.appendChild(off);
+    }
+
+    var again = el('button','restart','Start over');
+    again.type = 'button';
+    again.addEventListener('click', function(){
+      answers = {}; order = []; render();
+    });
+    panel.appendChild(again);
+  }
+
+  function render(){
+    var n = next();
+    if(n) renderQuestion(n); else renderResult();
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
