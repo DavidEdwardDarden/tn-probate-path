@@ -26,7 +26,7 @@
 
   <div class="notice">
     <h2>The rule changed in 2023</h2>
-    <p>Tennessee no longer has a small estate affidavit you hand to a bank. A 2023 rewrite of the Small Estate Probate Act replaced it with a sworn petition to the court clerk, who issues Limited Letters. Guides still describing the old affidavit are out of date.</p>
+    <p>Public Chapter 297, effective April 28, 2023, replaced the small estate affidavit with a sworn <b>petition</b> for <b>Limited Letters</b>, rewrote the bond rules, and barred creditor notice and claims from the small estate track. Guides still using the old affidavit wording are out of date, and some county fee schedules still print the old name over the new form.</p>
   </div>
 
   <div class="card" id="panel"></div>
@@ -39,7 +39,7 @@
 
   <div class="card">
     <h2 class="sec">Which office takes probate where you are</h2>
-    <p>Most Tennessee counties file probate with the Clerk and Master. Six do not, and one of them is Nashville. There is no published list of this anywhere, so one was built from the statutes and every county's private acts.</p>
+    <p>Most Tennessee counties file probate with the Clerk and Master. Six confirmed do not, one of them Nashville, and five more are unsettled. There is no published list of this anywhere, so one was built from the statutes and every county's private acts.</p>
     <p><a class="cta" href="/where-to-file/">All 95 counties, with phone numbers</a></p>
   </div>
 
@@ -65,7 +65,7 @@
 
   <footer>
     <p><b>This is organization, not legal advice.</b> It points you at the right filing so you are not reading the wrong form at the clerk's window. Tennessee probate is handled by the Clerk and Master of the Chancery Court in most counties, and a few counties have their own probate court with local rules.</p>
-    <p>Statutes referenced: <code>T.C.A. § 30-4-101 et seq.</code> (Small Estate Probate Act, rewritten effective April 28, 2023), <code>§ 30-4-102</code> (the $50,000 test, personal property only), <code>§ 30-4-103</code> (petition and Limited Letters), <code>§ 32-2-111</code> (muniment of title), <code>§ 32-2-101</code> (probate in common form), <code>§ 30-2-306</code> (notice to creditors). TennCare estate recovery applies to long-term care received at age 55 or older; the estate representative files a Request for Release with TennCare.</p>
+    <p>Statutes referenced: <code>T.C.A. § 30-4-101 et seq.</code> (Small Estate Probate Act, rewritten effective April 28, 2023), <code>§ 30-4-102</code> (the $50,000 test, personal property only), <code>§ 30-4-103</code> (petition and Limited Letters), <code>§ 32-2-111</code> (muniment of title), <code>§ 30-1-117</code> (what the petition to open an administration must contain), <code>§ 32-2-101</code> (where a will is proved and letters are granted), <code>§ 30-2-306</code> (notice to creditors, which applies to a full administration only).<br>The 2023 rewrite replaced an affidavit that was already court-filed, under the Small Estate Affidavit Limited Letter of Authority Act. It made it a petition, prescribed a form for the letters, rewrote bond, and barred creditor notice and claims from the small estate track. TennCare estate recovery applies to long-term care received at age 55 or older; the estate representative files a Request for Release with TennCare.</p>
     <p>Court costs, local forms, and whether a county entertains a muniment of title all vary. The Clerk and Master in the county where the person lived is the authority on all three, and the statute directs that office to help you with the small estate petition.</p>
     <p>Written and checked against the Tennessee Code and county clerk forms on <b>October 26, 2026</b>, by David Darden, Murfreesboro, Tennessee. Laws change. Check the date before relying on this.</p>
   </footer>
@@ -109,7 +109,7 @@
       ]},
     { id:'days',
       q:'Has it been 45 days since the date of death?',
-      help:'The small estate route has a 45 day waiting period built into the statute.',
+      help:'The small estate route has a 45 day wait built into the statute, though a court can waive it for good cause. The route also closes if someone has already filed to appoint a personal representative.',
       opts:[
         {v:'yes', b:'Yes, 45 days or more'},
         {v:'no', b:'Not yet'}
@@ -185,7 +185,7 @@
       return {
         label:'Full administration, solemn form',
         title:'Open it in solemn form',
-        cite:'Probate in solemn form, contrasted with § 32-2-101',
+        cite:'Probate in solemn form, contrasted with common form',
         why:'Common form probate is quick and gives no advance notice to heirs, which leaves the door open to a challenge later. Solemn form notifies every interested party up front and is heard by the chancellor, so the order that comes out is much harder to unwind.',
         steps:[
           'Retain a probate attorney. A contested estate is not a self-filed matter.',
@@ -223,9 +223,9 @@
         label:'Small estate, not yet filable',
         title:'You qualify, the calendar does not',
         cite:'T.C.A. § 30-4-103',
-        why:'The personal property is at or under $50,000, which puts this on the small estate track. The statute makes you wait 45 days from the date of death before the petition can go in.',
+        why:'The personal property is at or under $50,000, which puts this on the small estate track. The statute makes you wait 45 days from the date of death before the petition can go in, though a court can waive that wait for good cause if you have a reason worth asking about.',
         steps:[
-          'Mark the 45th day after the date of death on a calendar.',
+          'Mark the 45th day after the date of death on a calendar. If waiting is a real hardship, ask the clerk what the court wants to see to waive it.',
           'Use the wait to build the asset list the petition requires: every account, balance, and vehicle, with values.',
           'Build the debt list too. The petition asks for creditors, names, addresses, and amounts.',
           'Get the original will to the clerk if there is one. It must be filed before Limited Letters issue.',
@@ -234,7 +234,7 @@
         facts:[['Filing','Petition for Limited Letters'],['Threshold','$50,000'],['Wait','45 days']],
         caution: a.realty === 'yes'
           ? 'A small estate petition cannot transfer real estate. The land needs its own route, usually muniment of title where there is a will, or an administration.'
-          : 'If more assets surface and push the total over $50,000, the matter converts to a full administration.'
+          : 'If more assets surface and push the total over $50,000, somebody has to petition the court to convert it. It does not convert on its own, and the statute puts personal liability on the representative and on anyone already paid.'
       };
     }
 
@@ -244,12 +244,13 @@
         label:'Small estate administration',
         title:'Petition for ' + smallEstateName(),
         cite:'T.C.A. § 30-4-101 et seq., § 30-4-103',
-        why:'Personal property in their name alone is at or under $50,000 and 45 days have passed. This is the short track: a sworn petition to the clerk, who issues Limited Letters you present to whoever is holding the property.',
+        why:'Personal property in their name alone is at or under $50,000 and 45 days have passed. This is the short track: a sworn petition to the clerk, who issues Limited Letters you present to whoever is holding the property. No creditor notice is published on this track and no creditor can file a claim.',
         steps:[
           'Get the petition form from the Clerk and Master in the county where the person lived. The clerk is authorized by statute to help you fill it out.',
           'List every asset with its value, and every known debt with the creditor’s name, address, and amount.',
           a.will === 'yes' ? 'File the original will with the clerk. Limited Letters will not issue until it is in.' : 'Collect written consents from the other adult heirs if they agree you should serve.',
-          'Expect a bond requirement. The court can require it payable to the clerk regardless of what a will says about waiving bond.',
+          'Expect to post a corporate surety bond equal to the value of the property. The statute requires it whatever the will says. You are excused only if you are the sole heir of someone who died without a will, the sole beneficiary under the will, or every adult heir and beneficiary consents in writing.',
+          'No creditor notice is published and no creditor can file a claim in a small estate. If an office quotes you a publication cost on this track, ask why.',
           'Take the issued Limited Letters to each bank or institution to collect, then pay creditors before distributing anything.',
           rl ? 'Handle the real estate separately. It cannot move on this petition.' : 'Keep receipts. You are accountable for what you collect and pay out.'
         ],
@@ -264,7 +265,7 @@
       return {
         label:'Full administration, with a real estate question',
         title:'Common form probate, and ask about muniment of title',
-        cite:'T.C.A. § 32-2-101, § 32-2-111',
+        cite:'T.C.A. § 30-1-117, § 32-2-111',
         why:'Personal property is over $50,000, so the small estate track is closed and a full administration opens. Separately, a muniment of title admits the will for the limited purpose of establishing title, with no personal representative appointed and no administration at all. Worth asking about before you file the larger case.',
         steps:[
           'Inventory everything first, sorted into their name alone versus everything else. The sort decides the case.',
@@ -282,7 +283,7 @@
     return {
       label:'Full administration',
       title:'Probate in common form',
-      cite:'T.C.A. § 32-2-101',
+      cite:'T.C.A. § 30-1-117',
       why: a.value === 'over'
         ? 'Personal property in their name alone is over the $50,000 small estate ceiling, so this is the standard track: a personal representative is appointed, creditors get notice, and the estate is settled under the court’s supervision.'
         : 'Until the personal property is inventoried and comes in at or under $50,000, plan on the standard track. Appointment, notice to creditors, settlement under the court’s supervision.',
